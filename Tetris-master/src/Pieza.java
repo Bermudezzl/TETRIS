@@ -41,6 +41,11 @@ public class Pieza {
       body=lcord;
       id=lnombrepieza[0]; 
       this.colorpieza = Color.RED;
+      p1.setC(colorpieza);
+      p2.setC(colorpieza);
+      p3.setC(colorpieza);
+      p4.setC(colorpieza);
+
       //this.centro = p4;
       this.centro =this.getBody().get(3);
 
@@ -64,6 +69,10 @@ public class Pieza {
       body=lcord;
       id=lnombrepieza[1]; 
       this.colorpieza = Color.ORANGE;
+      p1.setC(colorpieza);
+      p2.setC(colorpieza);
+      p3.setC(colorpieza);
+      p4.setC(colorpieza);
       //this.centro = p4;
       this.centro =this.getBody().get(3);
 
@@ -91,6 +100,10 @@ public class Pieza {
       body=lcord;
       id=lnombrepieza[2]; 
       this.colorpieza = Color.GREEN;
+      p1.setC(colorpieza);
+      p2.setC(colorpieza);
+      p3.setC(colorpieza);
+      p4.setC(colorpieza);
       //this.centro = p4;
       this.centro =this.getBody().get(3);
 
@@ -114,6 +127,10 @@ public class Pieza {
       body=lcord;
       id=lnombrepieza[3]; 
       this.colorpieza = Color.PINK;
+      p1.setC(colorpieza);
+      p2.setC(colorpieza);
+      p3.setC(colorpieza);
+      p4.setC(colorpieza);
       //this.centro = p4;
       this.centro =this.getBody().get(2);
 
@@ -137,6 +154,10 @@ public class Pieza {
       body=lcord;
       id=lnombrepieza[4]; 
       this.colorpieza = Color.YELLOW;
+      p1.setC(colorpieza);
+      p2.setC(colorpieza);
+      p3.setC(colorpieza);
+      p4.setC(colorpieza);
       //this.centro = p4;
       this.centro =this.getBody().get(2);
 
@@ -160,6 +181,10 @@ public class Pieza {
       body=lcord;
       id=lnombrepieza[5]; 
       this.colorpieza = Color.LIGHT_GRAY;
+      p1.setC(colorpieza);
+      p2.setC(colorpieza);
+      p3.setC(colorpieza);
+      p4.setC(colorpieza);
       //this.centro = p4;
       this.centro =this.getBody().get(2);
 
@@ -183,10 +208,28 @@ public class Pieza {
       body=lcord;
       id=lnombrepieza[6]; 
       this.colorpieza = Color.MAGENTA;
+      p1.setC(colorpieza);
+      p2.setC(colorpieza);
+      p3.setC(colorpieza);
+      p4.setC(colorpieza);
       //this.centro = p4;
       this.centro =this.getBody().get(2);
 
       return this.getBody();
+   }
+
+   public void rotarPieza(){
+      Coordenadas centro = this.getCentro();//variable auxiliar para guardar las coordenadas del centro
+      for(Coordenadas c : this.getBody()){//para recorrer las coordenadas de los puntos
+         int cenx=centro.getX();
+         int ceny=centro.getY();
+         int pcx = c.getX()-cenx;
+         int pyx = c.getY()-ceny;
+         int finx = centro.getX()+pyx;
+         int finy = centro.getY()-pcx;
+         c.setX(finx);
+         c.setY(finy);
+      }
    }
 
    public void setLnombrepieza(String[] lnombrepieza) {

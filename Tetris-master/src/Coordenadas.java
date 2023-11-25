@@ -1,6 +1,9 @@
+import java.awt.Color;
+
 public class Coordenadas {
    int x;
    int y;
+   Color c;
    
    public Coordenadas(int x, int y){
       this.x = x;
@@ -23,6 +26,13 @@ public class Coordenadas {
 
    public void setY(int y) {
       this.y = y;
+   }
+   
+   public Color getC() {
+      return c;
+   }
+   public void setC(Color c) {
+      this.c = c;
    }
 
    
